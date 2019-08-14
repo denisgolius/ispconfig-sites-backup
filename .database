@@ -1,0 +1,2 @@
+# cat .database 
+site.com /var/www/site.com/web /var/backup/site.com site_com_db site_com_user site_com_user_password 192.168.1.11
