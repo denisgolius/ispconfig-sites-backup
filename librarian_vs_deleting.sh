@@ -99,6 +99,22 @@ echo "$(date)=====================START $site_name backup======================"
 #===================================
 
 
+#BACKUP INTO GOOGLE DRIVE===========
+
+echo "$(date) $NOW-$site_name uploading into GOOGLE DRIVE has started" >> $LOG
+
+    if `/usr/bin/rclone --config=/root/.config/rclone/rclone.conf -v --log-file=/var/log/rclone.log --drive-chunk-size=32768k --drive-upload-cutoff=16384k copy /var/backup/$site_name your_id:$site_name`; then
+      echo "$(date) $NOW-$site_name upload has FINISHED" >> $LOG
+    else
+      echo "$(date) $NOW-$site_name uploading into GOOGLE DRIVE has FAILED" >> $LOG
+      curl "https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage?chat_id=-1001196633700&text=$(date +%Y%m%d-%H%M%S) $site_name Copying ARCHIVES to Google drive failed!" > /dev/null 2>&1
+    fi
+
+echo "$(date) $NOW-$site_name uploading into GOOGLE DRIVE has ENDED" >> $LOG
+
+#===================================
+
+
 # REMOVING FILES FROM DISK =========
 
 echo "$(date) $NOW-$site_name removing has started" >> $LOG
