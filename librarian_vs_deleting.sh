@@ -30,7 +30,7 @@ for LINE in `cat $BACKUP_PSW_FILE`; do
     db_name=${ARRAY[3]}
     db_user=${ARRAY[4]}
     db_pass=${ARRAY[5]}
-    backup_server=${ARRAY[5]}
+    backup_server=${ARRAY[6]}
 
 echo "$(date)=====================START $site_name backup======================" >> $LOG
 
