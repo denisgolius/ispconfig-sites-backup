@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# site_name site_loc back_loc db_name db_user db_pass
-
 curl "https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage?chat_id=$TG_CHAT_ID&text=$(date +%Y%m%d-%H%M%S) Starting backup process on $HOSTNAME!" > /dev/null 2>&1
 
 NOW=$(date +%Y%m%d-%H%M%S)
