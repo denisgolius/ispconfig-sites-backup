@@ -17,7 +17,7 @@ IFS=$'\n'
 BACKUP_USER_SSH_KEY='/root/backupuser_rsa'
 BACKUP_USERNAME='backupuser'
 TG_CHAT_ID='-1234567890'
-TG_BOT_TOKEN='641268113:AAGq1odlUPyootjusvKO7xHum8k9wZTaL2Y'
+TG_BOT_TOKEN='your_token_from_botfather'
 
 for LINE in `cat $BACKUP_PSW_FILE`; do
     IFS=' '
